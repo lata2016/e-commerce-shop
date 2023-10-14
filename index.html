@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art E-Commerce</title>
+
+    <!-- link to CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--Icons-->
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <div class="nav container">
+        <a href="#" class="logo">Welcome to my Online Shop </a>
+        <!--cart icon-->
+        <i class='bx bx-cart-add'id="cart-icon"></i>
+
+        <div class="cart">
+          <h2 class="cart-title">Your cart</h2>
+          <div class="cart-content"></div>
+          <!--Total of cart-->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <button type="button" class="btn-buy">Buy Now</button>
+          <!--Close cart-->
+          <i class="bx bx-x" id="close-cart"></i>
+        </div>
+      </div>
+    </header>
+    <section class="shop container">
+    <h2 class="section-title">Shop products</h2>
+             <div class="shop-content">
+              <div class="row">
+                <!--product 1-->
+                <div class="product-box">
+                  <img src="img/product1.jpeg" alt="" class="product-img">
+                  <h2 class="product-title">Art work 1</h2>
+                  <span class="price">24$</span>
+                  <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                    Add to Cart
+                  </span>
+                </div>
+                <!--product 2-->
+                <div class="product-box">
+                  <img src="img/product2.jpeg" alt="" class="product-img">
+                  <h2 class="product-title">Art work 2</h2>
+                  <span class="price">30$</span>
+                  <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                    Add to Cart
+                  </span>
+                </div>
+            </div>
+            <div class="row">
+              <!--product 3-->
+              <div class="product-box">
+                <img src="img/product3.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 3</h2>
+                <span class="price">14$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+              <!--product 4-->
+              <div class="product-box">
+                  <img src="img/product4.jpeg" alt="" class="product-img">
+                  <h2 class="product-title">Art work 4</h2>
+                  <span class="price">64$</span>
+                  <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                    Add to Cart
+                  </span>
+              </div>
+
+            </div>
+            <div class="row">
+               <!--product 5-->
+              <div class ="product-box">
+                <img src="img/product5.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 5</h2>
+                <span class="price">80$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+              <!--product 6-->
+              <div class ="product-box">
+                <img src="img/product6.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 6</h2>
+                <span class="price">54$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class ="product-box">
+                <img src="img/product7.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 7</h2>
+                <span class="price">204$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+             </div>
+             <div class="product-box">
+               <img src="img/product8.jpeg" alt="" class="product-img">
+               <h2 class="product-title">Art work 8</h2>
+               <span class="price">74$</span>
+               <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                Add to Cart
+              </span>
+             </div>
+               
+            </div>
+            <div class="row">
+              <div class="product-box">
+                <img src="img/product9.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 9</h2>
+                <span class="price">40$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+              <div class="product-box">
+                <img src="img/product10.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 10</h2>
+                <span class="price">37$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+               </div>
+
+            </div>
+            <div class="row">
+              <div class="product-box">
+                <img src="img/product11.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 11</h2>
+                <span class="price">22$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+               </div>
+              <div class="product-box">
+                <img src="img/product12.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 12</h2>
+                <span class="price">12$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="product-box">
+                <img src="img/product13.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 13</h2>
+                <span class="price">11$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+              <div class="product-box">
+                <img src="img/product14.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 14</h2>
+                <span class="price">49$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="product-box">
+                <img src="img/product15.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 15</h2>
+                <span class="price">63$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+              <div class="product-box">
+                <img src="img/product16.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 16</h2>
+                <span class="price">100$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="product-box">
+                <img src="img/product17.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 17</h2>
+                <span class="price">103$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+              <div class="product-box">
+                <img src="img/product18.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 18</h2>
+                <span class="price">70$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="product-box">
+                <img src="img/product19.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 19</h2>
+                <span class="price">60$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+              <div class="product-box">
+                <img src="img/product20.jpeg" alt="" class="product-img">
+                <h2 class="product-title">Art work 20</h2>
+                <span class="price">15$</span>
+                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  Add to Cart
+                </span>
+              </div>
+            </div>
+
+            </div>
+              <div class="page-navigation">
+                  <button class="prev">Previous</button>
+                  <span class="page-num">Page 1</span>
+                  <button class="next">Next</button>
+              </div>
+          </div>
+      </section>
+      <script src="js/main.js"></script>
+   </body>
+</html>
