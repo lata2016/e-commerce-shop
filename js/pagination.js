@@ -1,59 +1,75 @@
-// JavaScript to handle image pagination
-/*
-const images = document.querySelectorAll('.image-list img');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const pageNum = document.querySelector('.page-num');
+const pageNavigation = document.querySelector('.page-navigation');
+const pageSpan = document.querySelector('.page-num');
+let currentPage = 1; // Initialize the current page to 1
+const productsPerPage = 6; // Number of products per page
+const totalProducts = 20; 
 
-const itemsPerPage = 6;
-let currentPage = 1;
-
-function showPage(page) {
-  const startIndex = (page - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-
-  images.forEach((image, index) => {
-    if (index >= startIndex && index < endIndex) {
-      image.style.display = 'block';
-    } else {
-      image.style.display = 'none';
-    }
-  });
-
-  pageNum.textContent = `Page ${page}`;
+// Function to update the page number 
+function updatePageNumber() {
+  pageSpan.textContent = `Page ${currentPage}`;
 }
 
-function updateButtons() {
-  if (currentPage === 1) {
-    prevButton.style.display = 'none';
-  } else {
-    prevButton.style.display = 'block';
-  }
-
-  if (currentPage * itemsPerPage >= images.length) {
-    nextButton.disabled = true;
-  } else {
-    nextButton.disabled = false;
+// Function to handle the "Next" button click
+function onNextClick() {
+  const lastPage = Math.ceil(totalProducts / productsPerPage);
+  if (currentPage < lastPage) {
+    currentPage++;
+    updatePageNumber();
   }
 }
 
-prevButton.addEventListener('click', () => {
+// Function to handle the "Previous" button click
+function onPrevClick() {
   if (currentPage > 1) {
     currentPage--;
-    showPage(currentPage);
-    updateButtons();
+    updatePageNumber();
   }
-});
+}
 
-nextButton.addEventListener('click', () => {
-  if (currentPage * itemsPerPage < images.length) {
-    currentPage++;
-    showPage(currentPage);
-    updateButtons();
+// Add event listeners to the "Next" and "Previous" buttons
+pageNavigation.querySelector('.next').addEventListener('click', onNextClick);
+pageNavigation.querySelector('.prev').addEventListener('click', onPrevClick);
+
+updatePageNumber();
+
+function onNextClick() {
+    const lastPage = Math.ceil(totalProducts / productsPerPage);
+    if (currentPage < lastPage) {
+      currentPage++;
+      showProductsForPage(currentPage);
+      updatePageNumber();
+    }
   }
-});
+  
+  // Function to handle the "Previous" button click
+  function onPrevClick() {
+    if (currentPage > 1) {
+      currentPage--;
+      showProductsForPage(currentPage);
+      updatePageNumber();
+    }
+}
+updatePageNumber();
+showProductsForPage(currentPage); 
 
-// Initialize the pagination
-showPage(currentPage);
-updateButtons();
-*/
+function showProductsForPage(page) {
+  const startIndex = (page - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  
+  productBoxes.forEach((box, index) => {
+    if (index >= startIndex && index < endIndex) {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  });
+}
+
+
+
+
+
+
+
+
+

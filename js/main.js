@@ -3,10 +3,6 @@ let cartIcon = document.querySelector("#cart-icon");
 let cart = document.querySelector(".cart");
 let closeCart = document.querySelector("#close-cart");
 
-//pagination
-const itemsPerPage = 6;
-let currentPage = 1;
-
 const productBoxes = document.querySelectorAll(".product-box");
 
 //open cart
@@ -40,8 +36,7 @@ function ready(){
     var quantityInputs = document.getElementsByClassName("cart-quantity");
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i];
-         input.addEventListener("change", quantityChanged);
-        input.addEventListener("input", quantityChanged); // Add input event listener
+        input.addEventListener("change", quantityChanged);
     }
 
 
@@ -50,6 +45,7 @@ function ready(){
     for ( var i = 0;i < addCart.length;i++) {
         var button = addCart[i];
         button.addEventListener("click",addCartClicked);
+        updateTotal();
              
     
     }
@@ -57,33 +53,9 @@ function ready(){
 }
 
 
-function updateTotal() {
-    var cartContent = document.getElementsByClassName("cart-content")[0];
-    var cartBoxes = cartContent.getElementsByClassName("cart-box");
-    var total = 0;
-
-    for (var i = 0; i < cartBoxes.length; i++) {
-        var cartBox = cartBoxes[i];
-        var priceElement = cartBox.getElementsByClassName("cart-price")[0];
-        var quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
-        var price = parseFloat(priceElement.innerText.replace("$", ""));
-        var quantity = quantityElement.value;
-        total += price * quantity;
-    }
-
-    total = Math.round(total * 100) / 100;
-    var totalElement = document.getElementsByClassName("total-price")[0];
-    totalElement.innerText = "$" + total;
-
-    if (cartBoxes.length === 0) {
-        cart.classList.remove("active"); // Hide the cart if it's empty
-    }
-
-}
-
 function addCartClicked(event) {
     var button = event.target;
-    var shopProduct = button.parentElement; // Get the parent of the button, which is the product box
+    var shopProduct = button.parentElement; 
     var title = shopProduct.querySelector(".product-title").innerText;
     var price = shopProduct.querySelector(".price").innerText;
     var productImg = shopProduct.querySelector(".product-img").src;
@@ -95,7 +67,6 @@ function addProductToCart(title, price, productImg) {
     var cartShopBox = document.createElement("div");
     cartShopBox.classList.add("cart-box");
 
-    // Create and append elements to cartShopBox
 
     // Create a div for the product details
     var productDetails = document.createElement("div");
@@ -186,36 +157,13 @@ function updateTotal() {
     }
 }       
 
-//pagination function
-function showPage(page) {
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
+//buy button message alert
 
-    productBoxes.forEach((productBox, index) => {
-        if (index >= start && index < end) {
-            productBox.style.display = "block";
-        } else {
-            productBox.style.display = "none";
-        }
-    });
-}
+const buyNowButton = document.getElementById("buy-now-button");
 
-document.querySelector('.next').addEventListener('click', () => {
-    const maxPage = Math.ceil(productBoxes.length / itemsPerPage);
-    if (currentPage < maxPage) {
-        currentPage++;
-        showPage(currentPage);
-        updatePageNumber();
-    }
+  
+buyNowButton.addEventListener("click", function () {
+    window.alert("Thank you! Your order has been placed.");
+  
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        showPage(currentPage);
-        updatePageNumber();
-    }
-});
-
-showPage(currentPage);
-updatePageNumber();

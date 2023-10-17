@@ -22,7 +22,8 @@
       <div class="nav container">
         <a href="#" class="logo">Welcome to my Online Shop </a>
         <!--cart icon-->
-        <i class='bx bx-cart-add'id="cart-icon"></i>
+        <i class='bx bx-cart-add' id="cart-icon"></i>
+        
 
         <div class="cart">
           <h2 class="cart-title">Your cart</h2>
@@ -30,9 +31,11 @@
           <!--Total of cart-->
           <div class="total">
             <div class="total-title">Total</div>
-            <div class="total-price">$0</div>
+
+            <div class="total-price" id="total-price">$0.00</div>
           </div>
-          <button type="button" class="btn-buy">Buy Now</button>
+          <button type="button" class="btn-buy" id="buy-now-button">Buy Now</button>
+
           <!--Close cart-->
           <i class="bx bx-x" id="close-cart"></i>
         </div>
@@ -40,23 +43,32 @@
     </header>
     <section class="shop container">
     <h2 class="section-title">Shop products</h2>
+    <section class="filter">
+        <label for="price-filter">Filter by Price:</label>
+        <select id="price-filter">
+             <option value="all">All Products</option>
+             <option value="low-to-high">Low to High</option>
+             <option value="high-to-low">High to Low</option>
+        </select>
+    </section>
+    
              <div class="shop-content">
               <div class="row">
                 <!--product 1-->
-                <div class="product-box">
+                <div class="product-box" data-featured="true">
                   <img src="img/product1.jpeg" alt="" class="product-img">
-                  <h2 class="product-title">Art work 1</h2>
+                  <h2 class="product-title">Paint brushes</h2>
                   <span class="price">24$</span>
-                  <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  <span class="add-cart" onclick="addToCart('Paint brushes 1', 24, 'img/product1.jpeg')">
                     Add to Cart
                   </span>
                 </div>
                 <!--product 2-->
                 <div class="product-box">
                   <img src="img/product2.jpeg" alt="" class="product-img">
-                  <h2 class="product-title">Art work 2</h2>
+                  <h2 class="product-title">Abstract paint</h2>
                   <span class="price">30$</span>
-                  <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  <span class="add-cart" onclick="addToCart('Art work 2 ', 24, 'img/product2.jpeg')">
                     Add to Cart
                   </span>
                 </div>
@@ -65,18 +77,18 @@
               <!--product 3-->
               <div class="product-box">
                 <img src="img/product3.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 3</h2>
+                <h2 class="product-title">Visual</h2>
                 <span class="price">14$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Paint brushes 3', 24, 'img/product3.jpeg')">
                   Add to Cart
                 </span>
               </div>
               <!--product 4-->
               <div class="product-box">
                   <img src="img/product4.jpeg" alt="" class="product-img">
-                  <h2 class="product-title">Art work 4</h2>
+                  <h2 class="product-title">Art details</h2>
                   <span class="price">64$</span>
-                  <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                  <span class="add-cart" onclick="addToCart('Abstract art 4', 24, 'img/product4.jpeg')">
                     Add to Cart
                   </span>
               </div>
@@ -86,18 +98,18 @@
                <!--product 5-->
               <div class ="product-box">
                 <img src="img/product5.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 5</h2>
+                <h2 class="product-title">Colours</h2>
                 <span class="price">80$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 5', 24, 'img/product5.jpeg')">
                   Add to Cart
                 </span>
               </div>
               <!--product 6-->
               <div class ="product-box">
                 <img src="img/product6.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 6</h2>
+                <h2 class="product-title">Simple pictures</h2>
                 <span class="price">54$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 6', 24, 'img/product6.jpeg')">
                   Add to Cart
                 </span>
               </div>
@@ -106,17 +118,17 @@
             <div class="row">
               <div class ="product-box">
                 <img src="img/product7.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 7</h2>
+                <h2 class="product-title">Wall art</h2>
                 <span class="price">204$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 7', 24, 'img/product7.jpeg')">
                   Add to Cart
                 </span>
              </div>
              <div class="product-box">
                <img src="img/product8.jpeg" alt="" class="product-img">
-               <h2 class="product-title">Art work 8</h2>
+               <h2 class="product-title">Fire</h2>
                <span class="price">74$</span>
-               <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+               <span class="add-cart" onclick="addToCart('Art work 8', 24, 'img/product8.jpeg')">
                 Add to Cart
               </span>
              </div>
@@ -125,17 +137,17 @@
             <div class="row">
               <div class="product-box">
                 <img src="img/product9.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 9</h2>
+                <h2 class="product-title">Black and white picture</h2>
                 <span class="price">40$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 9', 24, 'img/product9.jpeg')">
                   Add to Cart
                 </span>
               </div>
               <div class="product-box">
                 <img src="img/product10.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 10</h2>
+                <h2 class="product-title">Water picture</h2>
                 <span class="price">37$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 10', 24, 'img/product10.jpeg')">
                   Add to Cart
                 </span>
                </div>
@@ -144,17 +156,17 @@
             <div class="row">
               <div class="product-box">
                 <img src="img/product11.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 11</h2>
+                <h2 class="product-title">Home studio</h2>
                 <span class="price">22$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 11', 24, 'img/product11.jpeg')">
                   Add to Cart
                 </span>
                </div>
               <div class="product-box">
                 <img src="img/product12.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 12</h2>
+                <h2 class="product-title">Art </h2>
                 <span class="price">12$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 12', 24, 'img/product12.jpeg')">
                   Add to Cart
                 </span>
               </div>
@@ -162,17 +174,17 @@
             <div class="row">
               <div class="product-box">
                 <img src="img/product13.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 13</h2>
+                <h2 class="product-title">Crystal</h2>
                 <span class="price">11$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 13', 24, 'img/product13.jpeg')">
                   Add to Cart
                 </span>
               </div>
               <div class="product-box">
                 <img src="img/product14.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 14</h2>
+                <h2 class="product-title">Architecture</h2>
                 <span class="price">49$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 14', 24, 'img/product14.jpeg')">
                   Add to Cart
                 </span>
               </div>
@@ -180,17 +192,17 @@
             <div class="row">
               <div class="product-box">
                 <img src="img/product15.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 15</h2>
+                <h2 class="product-title">Galaxy</h2>
                 <span class="price">63$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 15', 24, 'img/product15.jpeg')">
                   Add to Cart
                 </span>
               </div>
               <div class="product-box">
                 <img src="img/product16.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 16</h2>
+                <h2 class="product-title">Angel</h2>
                 <span class="price">100$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 16', 24, 'img/product16.jpeg')">
                   Add to Cart
                 </span>
               </div>
@@ -199,17 +211,17 @@
             <div class="row">
               <div class="product-box">
                 <img src="img/product17.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 17</h2>
+                <h2 class="product-title">History</h2>
                 <span class="price">103$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 17', 24, 'img/product17.jpeg')">
                   Add to Cart
                 </span>
               </div>
               <div class="product-box">
                 <img src="img/product18.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 18</h2>
+                <h2 class="product-title">Hear my voice</h2>
                 <span class="price">70$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 18', 24, 'img/product18.jpeg')">
                   Add to Cart
                 </span>
               </div>
@@ -217,22 +229,21 @@
             <div class="row">
               <div class="product-box">
                 <img src="img/product19.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 19</h2>
+                <h2 class="product-title">Feel free</h2>
                 <span class="price">60$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 19', 24, 'img/product19.jpeg')">
                   Add to Cart
                 </span>
               </div>
               <div class="product-box">
                 <img src="img/product20.jpeg" alt="" class="product-img">
-                <h2 class="product-title">Art work 20</h2>
+                <h2 class="product-title">Cat</h2>
                 <span class="price">15$</span>
-                <span class="add-cart" onclick="addToCart('Art work 1', 24, 'img/product1.jpeg')">
+                <span class="add-cart" onclick="addToCart('Art work 20', 24, 'img/product20.jpeg')">
                   Add to Cart
                 </span>
               </div>
             </div>
-
             </div>
               <div class="page-navigation">
                   <button class="prev">Previous</button>
@@ -242,5 +253,7 @@
           </div>
       </section>
       <script src="js/main.js"></script>
+      <script src="js/pagination.js"></script>
+      <script src="js/filter.js"></script>
    </body>
 </html>
